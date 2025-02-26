@@ -17,4 +17,7 @@ export class HousesController {
     const houseHTMLElem = document.getElementById('houseCards')
     houseHTMLElem.innerHTML = houseHTML
   }
+  createHomeListing() {
+
+  }
 }

@@ -147,10 +147,41 @@
               src="https://images.unsplash.com/photo-1520438901-f822f9f4be01?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGhvdXNlJTIwcGFydHl8ZW58MHx8MHx8fDA%3D"
               alt="Family in front of home" class="img-fluid">
           </div>
-
           <div class="col-md-6">
             <div class="shadow bg-light px-5 py-2">
-              <fm>
+              <form action="">
+                <div>
+                  <label for="homeAddress">Address</label>
+                  <input id="homeAddress" type="text" name="homeAddress" required>
+                </div>
+                <div>
+                  <label for="homeYear">Year</label>
+                  <input id="homeYear" type="number" name="homeYear" required min="1800" max="2025">
+                </div>
+                <div>
+                  <label for="homeBeds">Bedrooms</label>
+                  <input id="homeBeds" type="number" name="homeBeds" required min="0" max="20">
+                </div>
+                <div>
+                  <label for="homeBaths">Bathrooms</label>
+                  <input id="homeBaths" type="number" name="homeBaths" required min="0" max="10">
+                </div>
+                <div>
+                  <label for="homeSqft">Square Feet</label>
+                  <input id="homeSqft" type="number" name="homeSqft" required min="50" max="100000">
+                </div>
+                <div>
+                  <label for="homePrice">Price</label>
+                  <input id="homePrice" type="number" name="homePrice" required min="0" max="10000000">
+                </div>
+                <div class="py-2">
+                  <button id="app.housesController.createHomeListing()" type="submit"
+                    class="btn btn-light border">Submit</button>
+                </div>
+                <div class="py-2">
+                  <button type="reset" class="btn btn-danger border">Reset</button>
+                </div>
+              </form>
             </div>
           </div>
           <div class="row">
