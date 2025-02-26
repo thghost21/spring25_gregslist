@@ -149,7 +149,7 @@
           </div>
           <div class="col-md-6">
             <div class="shadow bg-light px-5 py-2">
-              <form action="">
+              <form onsubmit="app.housesController.createHomeListing()">
                 <div>
                   <label for="homeAddress">Address</label>
                   <input id="homeAddress" type="text" name="homeAddress" required>
@@ -171,12 +171,15 @@
                   <input id="homeSqft" type="number" name="homeSqft" required min="50" max="100000">
                 </div>
                 <div>
+                  <label for="homeDescription">Home Description</label>
+                  <input id="homeDescription" type="text" name="homeDescription" required minlength="2" maxlength="250">
+                </div>
+                <div>
                   <label for="homePrice">Price</label>
                   <input id="homePrice" type="number" name="homePrice" required min="0" max="10000000">
                 </div>
                 <div class="py-2">
-                  <button id="app.housesController.createHomeListing()" type="submit"
-                    class="btn btn-light border">Submit</button>
+                  <button type="submit" class="btn btn-light border">Submit</button>
                 </div>
                 <div class="py-2">
                   <button type="reset" class="btn btn-danger border">Reset</button>
