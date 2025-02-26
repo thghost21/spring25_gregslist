@@ -31,11 +31,9 @@ export class Car {
     return `
      <div class="col-12">
       <div class="shadow bg-light d-flex mb-4">
-        <img
-          src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/02q4/267343/subaru-baja-photo-9829-s-original.jpg?fill=1:1&resize=1200:*"
-          alt="baja" class="car-img">
+        <img src="${this.imgUrl}" alt="${this.make} ${this.model}" class="car-img">
         <div class="p-3 flex-grow-1">
-          <h3>2000 Subaru Baja</h3>
+          <h3>${this.year} ${this.make} ${this.model}</h3>
           <div class="d-flex justify-content-between">
             <div>
               <p class="fs-3">$6000</p>

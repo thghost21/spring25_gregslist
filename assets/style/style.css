@@ -18,6 +18,9 @@ main {
 
 .car-img {
   width: 40%;
+  max-height: 33vh;
+  object-fit: cover;
+  object-position: center;
 }
 
 .color-bubble {
