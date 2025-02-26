@@ -15,3 +15,15 @@ main {
   justify-content: start;
   align-items: end;
 }
+
+.car-img {
+  width: 40%;
+}
+
+.color-bubble {
+  height: 2rem;
+  aspect-ratio: 1/1;
+  background-color: red;
+  border-radius: 50%;
+  border: thin solid black;
+}
