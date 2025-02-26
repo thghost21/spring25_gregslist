@@ -10,6 +10,7 @@ export class CarsController {
     AppState.on('cars', this.drawCars) //observer
 
     this.drawCars()
+
   }
 
   drawCars() {
@@ -53,5 +54,7 @@ export class CarsController {
     }
 
     console.log('deleting car with the id of ' + carId);
+
+    carsService.deleteCar(carId)
   }
 }
