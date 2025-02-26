@@ -1,9 +1,13 @@
 import { AppState } from "../AppState.js";
+import { carsService } from "../services/CarsService.js";
 import { getFormData } from "../utils/FormHandler.js";
 
 export class CarsController {
   constructor() {
     console.log('CARS CONTROLLER IS READY 🚗');
+
+    AppState.on('cars', this.drawCars) //observer
+
     this.drawCars()
   }
 
@@ -32,6 +36,6 @@ export class CarsController {
     // NOTE make sure your data is structured correctly before passing it down to the service
     console.log('raw car data', rawCarData);
 
-
+    carsService.createCar(rawCarData)
   }
 }
