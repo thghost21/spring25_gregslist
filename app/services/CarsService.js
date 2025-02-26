@@ -23,7 +23,9 @@ class CarsService {
     cars.splice(carIndex, 1)
   }
 
-
+  saveCars() {
+    saveState('cars', AppState.cars)
+  }
 }
 
 export const carsService = new CarsService()

@@ -10,7 +10,6 @@ export class CarsController {
     AppState.on('cars', this.drawCars) //observer
 
     this.drawCars()
-
   }
 
   drawCars() {
