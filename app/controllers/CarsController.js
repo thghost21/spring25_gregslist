@@ -5,11 +5,9 @@ import { Pop } from "../utils/Pop.js";
 
 export class CarsController {
   constructor() {
-    console.log('CARS CONTROLLER IS READY 🚗');
-
     AppState.on('cars', this.drawCars) //observer
 
-    this.drawCars()
+    carsService.loadCars()
   }
 
   drawCars() {

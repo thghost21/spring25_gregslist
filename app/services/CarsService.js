@@ -1,10 +1,11 @@
 import { AppState } from "../AppState.js";
 import { Car } from "../models/Car.js";
-import { saveState } from "../utils/Store.js";
+import { loadState, saveState } from "../utils/Store.js";
 
 class CarsService {
 
   createCar(carData) {
+
     console.log('raw car data POJO', carData);
     const newCar = new Car(carData)
     console.log('Car!', newCar);
@@ -13,6 +14,7 @@ class CarsService {
     cars.push(newCar) // length of an array changing will trigger our observer
 
     console.log('cars after push', AppState.cars);
+    this.saveCars()
   }
 
   deleteCar(carId) {
@@ -21,10 +23,23 @@ class CarsService {
     const carIndex = cars.findIndex(car => car.id == carId)
     console.log('This is the index', carIndex);
     cars.splice(carIndex, 1)
+
+    this.saveCars()
   }
 
   saveCars() {
     saveState('cars', AppState.cars)
+  }
+
+  loadCars() {
+    const carsFromLocalStorage = loadState('cars', [Car])
+
+    if (carsFromLocalStorage.length == 0) {
+      AppState.emit('cars') // manually trigger an observer
+      return
+    }
+
+    AppState.cars = carsFromLocalStorage
   }
 }
 
