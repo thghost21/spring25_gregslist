@@ -46,6 +46,12 @@ export class CarsController {
   }
 
   deleteCarListing(carId) {
+    const confirmed = window.confirm('Are you sure you want to delete this car listing?')
+
+    if (!confirmed) {
+      return
+    }
+
     console.log('deleting car with the id of ' + carId);
   }
 }
