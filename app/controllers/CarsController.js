@@ -44,4 +44,8 @@ export class CarsController {
 
     Pop.toast('You just listed a car!')
   }
+
+  deleteCarListing(carId) {
+    console.log('deleting car with the id of ' + carId);
+  }
 }

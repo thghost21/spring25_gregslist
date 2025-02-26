@@ -1,3 +1,5 @@
+import { generateId } from "../utils/GenerateId.js"
+
 export class Car {
   // NOTE this constructor takes in a single object as an argument
   // NOTE the JS docs are not necessary, but they will give you better intellisense when using this class
@@ -15,6 +17,7 @@ export class Car {
    * imgUrl: string }} data
    */
   constructor(data) {
+    this.id = generateId() // generates a super unique string we can use as an identifier
     this.make = data.make
     this.model = data.model
     this.mileage = data.mileage
@@ -71,6 +74,11 @@ export class Car {
               <p>${this.mileage.toLocaleString('en-US')} miles</p>
               <p>${this.transmissionIcon}</p>
             </div>
+          </div>
+          <div class="text-end">
+            <button onclick="app.carsController.deleteCarListing('${this.id}')" class="btn btn-outline-danger" type="button">
+              Delete Car
+            </button>
           </div>
         </div>
       </div>
