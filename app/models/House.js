@@ -1,4 +1,4 @@
-import { generateId } from "../utils/GenerateId";
+import { generateId } from "../utils/GenerateId.js";
 
 
 export class House {
@@ -14,5 +14,28 @@ export class House {
     this.imgUrl = data.imgUrl
   }
 
-
+  get houseHTMLTemplate() {
+    return `
+      <div class="shadow bg-light d-flex mb-4">
+            <img src="${this.imgUrl}"
+                  alt="house" class="car-img">
+                <div class="p-3 flex-grow-1">
+                  <h3>${this.address}</h3>
+                  <div class="d-flex justify-content-between">
+                    <div>
+                      <p class="fs-3">${this.price}</p>
+                      <p>${this.description}</p>
+                      <div class="d-flex gap-2 align-items-center">
+                        <span>${this.sqft}</span>
+                      </div>
+                    </div>
+                    <div class="fs-5">
+                      <p>${this.bedrooms} bed / ${this.bathrooms} bath</p>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    
+    `
+  }
 }
