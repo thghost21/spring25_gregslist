@@ -9,6 +9,14 @@ main {
   flex-grow: 1;
 }
 
+label {
+  display: block;
+}
+
+input {
+  min-width: 100%;
+}
+
 #pop-toast-container {
   display: flex;
   flex-direction: column;
@@ -28,4 +36,8 @@ main {
   aspect-ratio: 1/1;
   border-radius: 50%;
   border: thin solid black;
+}
+
+.check-input {
+  min-width: unset;
 }

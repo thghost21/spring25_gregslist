@@ -56,10 +56,10 @@ export class Car {
       <div class="shadow bg-light d-flex mb-4">
         <img src="${this.imgUrl}" alt="${this.make} ${this.model}" class="car-img">
         <div class="p-3 flex-grow-1">
-          <h3>${this.year} ${this.make} ${this.model}</h3>
+          <h4 class="text-capitalize">${this.year} ${this.make} ${this.model}</h4>
           <div class="d-flex justify-content-between">
             <div>
-              <p class="fs-3">${this.priceAsCurrency}</p>
+              <p class="fs-4">${this.priceAsCurrency}</p>
               <p>${this.titleStatus}</p>
               <div class="d-flex gap-2 align-items-center">
                 <span>Color</span>
