@@ -1,6 +1,7 @@
 import { AppState } from "../AppState.js";
 import { carsService } from "../services/CarsService.js";
 import { getFormData } from "../utils/FormHandler.js";
+import { Pop } from "../utils/Pop.js";
 
 export class CarsController {
   constructor() {
@@ -37,5 +38,10 @@ export class CarsController {
     console.log('raw car data', rawCarData);
 
     carsService.createCar(rawCarData)
+
+    // @ts-ignore
+    carFormElem.reset()
+
+    Pop.toast('You just listed a car!')
   }
 }
