@@ -1,4 +1,5 @@
 import { Car } from './models/Car.js'
+import { House } from './models/House.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -53,6 +54,12 @@ class ObservableAppState extends EventEmitter {
       color: 'yellow',
       imgUrl: 'https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/02q4/267343/subaru-baja-photo-9829-s-original.jpg?fill=1:1&resize=1200:*'
     }),
+  ]
+  houses = [
+    new House({ year: '2010', bedrooms: 3, bathrooms: 2.5, sqft: 1400, price: 375000, description: 'modern home', imgUrl: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdXNlfGVufDB8fDB8fHww' }),
+    new House({ year: '2010', bedrooms: 3, bathrooms: 2.5, sqft: 1400, price: 480000, description: 'modern home', imgUrl: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aG91c2V8ZW58MHx8MHx8fDA%3D' }),
+    new House({ year: '2010', bedrooms: 3, bathrooms: 2.5, sqft: 1400, price: 675000, description: 'modern home', imgUrl: 'https://plus.unsplash.com/premium_photo-1661883964999-c1bcb57a7357?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGhvdXNlfGVufDB8fDB8fHww' }),
+
   ]
 }
 
