@@ -27,6 +27,29 @@ export class Car {
     this.imgUrl = data.imgUrl
   }
 
+  get priceAsCurrency() {
+    const currency = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(this.price)
+
+    return currency
+  }
+
+  get transmissionIcon() {
+    if (this.isManualTransmission) {
+      return '<span class="mdi mdi-car-shift-pattern" title="Manual Transmission"></span>'
+    }
+
+    // else
+    return '<span class="mdi mdi-refresh-auto" title="Automatic Transmission"></span>'
+  }
+
+  get titleStatus() {
+    if (this.hasCleanTitle) {
+      return 'This car has a clean title approved by <span class="mdi mdi-dog" title="Clean title good boy"></span>'
+    }
+
+    return 'This car has a salvaged title designated by <span class="mdi mdi-turkey" title="Salvaged title turkey"></span>'
+  }
+
   get cardHTMLTemplate() {
     return `
      <div class="col-12">
@@ -36,18 +59,17 @@ export class Car {
           <h3>${this.year} ${this.make} ${this.model}</h3>
           <div class="d-flex justify-content-between">
             <div>
-              <p class="fs-3">$6000</p>
-              <p>This car has a clean title approved by <span class="mdi mdi-dog"></span></p>
+              <p class="fs-3">${this.priceAsCurrency}</p>
+              <p>${this.titleStatus}</p>
               <div class="d-flex gap-2 align-items-center">
                 <span>Color</span>
-                <div class="color-bubble"></div>
+                <div class="color-bubble" style="background-color: ${this.color};"></div>
               </div>
             </div>
             <div class="fs-5">
-              <p>4 Cylinder</p>
-              <p>3000 miles</p>
-              <p><span class="mdi mdi-car-shift-pattern"></span></p>
-              <p><span class="mdi mdi-refresh-auto"></span></p>
+              <p>${this.engineType}</p>
+              <p>${this.mileage.toLocaleString('en-US')} miles</p>
+              <p>${this.transmissionIcon}</p>
             </div>
           </div>
         </div>
