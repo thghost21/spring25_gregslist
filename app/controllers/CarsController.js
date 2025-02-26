@@ -17,4 +17,9 @@ export class CarsController {
 
     carListingsElem.innerHTML = carCardsContent
   }
+
+  createCarListing() {
+    event.preventDefault() // this stops the page from refreshing
+    console.log('creating car listing!');
+  }
 }

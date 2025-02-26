@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-6">
           <div class="shadow bg-light px-5 py-2">
-            <form>
+            <form onsubmit="app.carsController.createCarListing()">
               <div class="mb-3">
                 <label for="carMake">Car Make</label>
                 <input id="carMake" name="make" type="text" required minlength="3" maxlength="20"
